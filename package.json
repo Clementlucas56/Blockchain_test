@@ -5,7 +5,8 @@
   "scripts": {
     "lint": "eslint ./",
     "build": "webpack",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "training": "concurrently --kill-others \"$(npm bin)/truffle compile; $(npm bin)/testrpc\" \"sleep 5; $(npm bin)/truffle migrate; $(npm bin)/truffle serve\""
   },
   "author": "Douglas von Kohorn",
   "license": "MIT",
